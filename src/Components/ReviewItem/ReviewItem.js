@@ -9,10 +9,19 @@ const ReviewItem = (props) => {
         paddingBottom: '5px',
         marginLeft: '200px'
     };
+    const quantityStyle = {
+        border: '1px solid salmon',
+        borderRadius: '5px',
+        width: '100px',
+        padding: '5px',
+        backgroundColor: 'green',
+        color: 'white'
+
+    }
     return (
         <div style={reviewItemStyle} className="review-item">
             <h4 className="product-name">{name}</h4>
-            <p>Quantity: {quantity}</p>
+            <p style={quantityStyle}>Quantity: {quantity}</p>
             <br/>
             <button className="main-btn">Remove</button>
         </div>
