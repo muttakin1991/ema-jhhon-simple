@@ -1,8 +1,7 @@
 import React from 'react';
 
 const ReviewItem = (props) => {
-    console.log(props)
-    const {name, quantity} = props.product;
+    const {name, quantity, key, price} = props.product;
     const reviewItemStyle = {
         borderBottom: '1px solid ligthgray',
         marginBottom:'5px',
@@ -15,15 +14,19 @@ const ReviewItem = (props) => {
         width: '100px',
         padding: '5px',
         backgroundColor: 'green',
-        color: 'white'
+        color: 'white',
 
     }
     return (
         <div style={reviewItemStyle} className="review-item">
             <h4 className="product-name">{name}</h4>
             <p style={quantityStyle}>Quantity: {quantity}</p>
+            <p><small>{price}</small></p>
             <br/>
-            <button className="main-btn">Remove</button>
+            <button 
+                className="main-btn"
+            onClick={() => props.removeProduct(key)}
+            >Remove</button>
         </div>
     );
 };
